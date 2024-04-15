@@ -34,4 +34,4 @@ jobs:
         uses: docker/bake-action@v4
         with:
           push: true
-          targets: "build"
+          targets: "8-1-39"
