@@ -1,6 +1,6 @@
 # docker-bake.hcl
 
-group "build" {
+group "default" {
 	targets = [
 		"8-1-39"
 	]
