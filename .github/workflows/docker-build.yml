@@ -5,8 +5,6 @@ on:
   push:
 jobs:
   build:
-    name: Setup
-  
     runs-on: ubuntu-latest
     steps:
       -
@@ -14,11 +12,11 @@ jobs:
         run: rm -rf /opt/hostedtoolcache
       -
         name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - 
         name: QEMU Setups
         id: qemu
-        uses: docker/setup-qemu-action@v2.1.0
+        uses: docker/setup-qemu-action@v3
         with:
           image: tonistiigi/binfmt:qemu-v6.2.0
           platforms: linux/amd64,linux/arm64,linux/arm/v7
