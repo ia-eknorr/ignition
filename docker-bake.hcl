@@ -7,7 +7,7 @@ group "default" {
 }
 
 variable "BASE_IMAGE_NAME" {
-    default = "sales-engineering/ignition"
+    default = "ghcr.io/ia-eknorr/ignition"
 }
 
 variable "BASE_VERSION" {
