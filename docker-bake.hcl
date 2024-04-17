@@ -2,7 +2,15 @@
 
 group "default" {
 	targets = [
-		"8-1-39"
+		"8.1.30",
+		"8.1.31",
+		"8.1.32",
+		"8.1.33",
+		"8.1.35",
+		"8.1.36",
+		"8.1.37",
+		"8.1.38",
+		"8-1-39",
 	]
 }
 
@@ -80,16 +88,7 @@ target "8-1-33" {
 	]
 }
 
-// This target inherits the 8-1-base and sets the patch to 34
-target "8-1-34" {
-	inherits = ["8-1-base"]
-	args = {
-		IGNITION_VERSION = "8.1.34"
-	}
-	tags = [
-		"${BASE_IMAGE_NAME}:8.1.34"
-	]
-}
+// Do not include 8.1.34 as it was a broken release
 
 // This target inherits the 8-1-base and sets the patch to 35
 target "8-1-35" {
