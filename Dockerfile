@@ -1,5 +1,6 @@
 ARG IGNITION_VERSION="8.1.39"
 FROM inductiveautomation/ignition:${IGNITION_VERSION:-latest}
+LABEL org.opencontainers.image.source https://github.com/ia-eknorr/ignition
 
 USER root
 
