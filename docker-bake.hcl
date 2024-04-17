@@ -1,13 +1,13 @@
 # docker-bake.hcl
 
-group "build" {
+group "default" {
 	targets = [
-		"8-1-39"
+		"8-1-39",
 	]
 }
 
 variable "BASE_IMAGE_NAME" {
-    default = "sales-engineering/ignition"
+    default = "ghcr.io/ia-eknorr/ignition"
 }
 
 variable "BASE_VERSION" {
@@ -80,16 +80,7 @@ target "8-1-33" {
 	]
 }
 
-// This target inherits the 8-1-base and sets the patch to 34
-target "8-1-34" {
-	inherits = ["8-1-base"]
-	args = {
-		IGNITION_VERSION = "8.1.34"
-	}
-	tags = [
-		"${BASE_IMAGE_NAME}:8.1.34"
-	]
-}
+// Do not include 8.1.34 as it was a broken release
 
 // This target inherits the 8-1-base and sets the patch to 35
 target "8-1-35" {

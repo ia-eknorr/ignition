@@ -65,6 +65,9 @@ main() {
     # Append the wrapper args to the provided args
     args+=("${wrapper_args[@]}")
 
+    # print args for debugging
+    echo "******Final args: ${args[@]}"
+
     entrypoint "${args[@]}"
 }
 
@@ -100,7 +103,7 @@ add_developer_mode_args() {
 # from the address provided
 ################################################################################
 add_localtest_address_args() {
-	jvm_args_map+=( ["-a"]="${HOSTNAME}.localtest.me" )
+	jvm_args_map+=( ["-a"]="${TRAEFIK_SERVICE_NAME}.localtest.me" )
 	jvm_args_map+=( ["-h"]="${GATEWAY_HTTP_PORT:-8088}" )
 	jvm_args_map+=( ["-s"]="${GATEWAY_HTTPS_PORT:-8043}" )
 }
